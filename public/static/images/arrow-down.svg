@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="arrow_forward" data-name="arrow forward" transform="translate(48) rotate(90)">
+    <g id="Group_1" data-name="Group 1" transform="translate(0 48) rotate(-90)" opacity="0">
+      <path id="Path_1" data-name="Path 1" d="M0,0H48V48H0Z" fill="#fff" />
+    </g>
+    <path id="Path_2" data-name="Path 2"
+      d="M10,26H33.72l-7.26,8.72a2,2,0,1,0,3.08,2.56l10-12a2.382,2.382,0,0,0,.18-.3c0-.1.1-.16.14-.26A1.963,1.963,0,0,0,40,24h0a1.963,1.963,0,0,0-.14-.72c0-.1-.1-.16-.14-.26a2.382,2.382,0,0,0-.18-.3l-10-12A2.008,2.008,0,0,0,26,11.82a2.035,2.035,0,0,0,.46,1.46L33.72,22H10a2,2,0,0,0,0,4Z"
+      fill="#fff" />
+    <path id="Path_3" data-name="Path 3" d="M0,0H48V48H0Z" fill="none" />
+  </g>
+</svg>
