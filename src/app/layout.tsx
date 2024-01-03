@@ -33,6 +33,7 @@ export default function RootLayout({
         outerStyle={{
           backgroundColor: 'transparent',
           border: '3px solid #fff',
+          mixBlendMode: 'exclusion',
         }}
       />
       <body className={`${notoSans.className} bg-black text-default`}>{children}</body>
