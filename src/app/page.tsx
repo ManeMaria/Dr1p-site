@@ -84,7 +84,7 @@ export default function Home() {
         <section className="bg-white text-black h-[100vdh] py-[4rem]">
           <div className="grid xl:grid-cols-2 xs:grid-cols-1">
             <div ref={refSection3Image} className={`xl:w-[80%] xs:w-[100%]  h-[80%]  animate__animated animate__bounce ${visibleSection3Image ? 'animate__fadeInLeft' : ''} animate__slow	3s`} >
-              <img className="max-w-[none] w-[100%] h-[100%] object-cover" src="https://images.unsplash.com/photo-1493612276216-ee3925520721?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fHww" alt="arrow-down" />
+              <img className="max-w-[none] w-[100%] h-[100%] object-cover" src={`https://images.unsplash.com/photo-1493612276216-ee3925520721?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fHww`} alt="arrow-down" />
             </div>
             <span className={`w-[100%]
               flex
@@ -168,7 +168,7 @@ export default function Home() {
                       transition-all
                     `}>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                     </p>
                   </div>
                 </li>
