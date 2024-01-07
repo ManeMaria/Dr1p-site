@@ -1,9 +1,4 @@
-
-
 import React, { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
-
-
-
 
 export function DefaultButton({
   children, ...props

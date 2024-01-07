@@ -1,27 +1,25 @@
 'use client';
 
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-
-import { DynamicHeader } from "@/components";
+import { Carousel, DefaultButton, DynamicHeader, LabelButton } from "@/components";
 import NextImage from "@/components/NextImage";
 import { useOnScroll } from "@/hooks";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const fontSizeBanner = 'xs:text-[3rem] xl:text-[5.3vw]';
 
-const images = [
-  'https://plus.unsplash.com/premium_photo-1666900440561-94dcb6865554?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tfGVufDB8fDB8fHww',
-  'https://images.unsplash.com/photo-1493612276216-ee3925520721?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fHww',
-  'https://images.unsplash.com/photo-1481349518771-20055b2a7b24?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tfGVufDB8fDB8fHww',
-  // 'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  // 'https://plus.unsplash.com/premium_photo-1664392248318-4e1d9361726e?q=80&w=1883&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  // 'https://images.unsplash.com/photo-1485550409059-9afb054cada4?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  // 'https://images.unsplash.com/photo-1494253109108-2e30c049369b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-];
 export default function Home() {
+  const [openItem, setOpen] = useState('')
   const { visible, elementRef } = useOnScroll()
+  const { visible: visibleSection3Image, elementRef: refSection3Image } = useOnScroll()
 
+  const onOpen = (item: string) => {
+    console.log('currentItem', item)
+    setOpen((currentItem) => {
+      console.log('currentItem', currentItem, currentItem === item ? '' : item)
+      return currentItem === item ? '' : item
+    })
+  }
   return (
     <>
       <DynamicHeader />
@@ -68,33 +66,123 @@ export default function Home() {
             </div>
           </Link>
         </section>
-
-        <section className="bg-white text-black my-[3rem]" id='projects' >
+        <section className="bg-white text-black " id='projects' >
           <span ref={elementRef} className={`w-full flex items-center animate__animated animate__bounce ${visible ? 'animate__fadeInDown ' : ''} animate__slow	3s`}>
-            <h2 className="font-bold xl:text-[14vw] xs:text-[20vw] bg-transparent " >
+            <h2 className="font-bold xl:text-[10vw] xs:text-[20vw] bg-transparent " >
               WORK
             </h2>
-            <span className='xl:w-[64%] xs:w-[45%] bg-gray-300 h-[2px] overflow-hidden' />
+            <span className='xl:w-[64%] xs:w-[45%] bg-gray-300 h-[2px] overflow-hidden ' />
           </span>
-          <div className="flex w-full justify-between overflow-x-hidden gap-[2rem] max-h-[30rem]">
-            {images.map((image, index) => (
-              <motion.img
-                key={index}
-                src={image}
-                alt={`Image ${index}`}
-                data-center={index === 1}
-                data-left={index === 0}
-                data-right={index === 2}
-                className={`min-w-[30rem] object-cover rounded-[8px] data-[left="true"]:w-[10rem] data-[right="true"]:w-[10rem] data-[center="true"]:w-[30rem] data-[center="true"]:-translate-y-[10px] data-[center="true"]:shadow-2xl `}
-              />
-            ))}
-
+          <Carousel />
+          <div className="flex items-center justify-end pr-[10%] w-full items-center text-[1.6rem]">
+            <p>confira nossos cases </p>
+            <span className="-rotate-[90deg]">
+              <LabelButton />
+            </span>
+          </div>
+        </section >
+        <section className="bg-white text-black h-[100vdh] py-[4rem]">
+          <div className="grid xl:grid-cols-2 xs:grid-cols-1">
+            <div ref={refSection3Image} className={`xl:w-[80%] xs:w-[100%]  h-[80%]  animate__animated animate__bounce ${visibleSection3Image ? 'animate__fadeInLeft' : ''} animate__slow	3s`} >
+              <img className="max-w-[none] w-[100%] h-[100%] object-cover" src="https://images.unsplash.com/photo-1493612276216-ee3925520721?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fHww" alt="arrow-down" />
+            </div>
+            <span className={`w-[100%]
+              flex
+              flex-col
+              justify-center
+              w-full
+              xl:pl-0
+              xs:pl-[2rem]
+              animate__animated
+              animate__bounce
+              ${visibleSection3Image ? 'animate__fadeInRight' : ''}
+              animate__slow	3s`}>
+              <h3 className="font-bold xl:text-[4vw] xs:text-[10vw] bg-transparent uppercase" >
+                Menos do mesmo
+              </h3>
+              <h4 className="font-bold bg-transparent my-[5px]">
+                Nos movemos diferentes para aqueles que querem diferença
+              </h4>
+              <h5>
+                Sem conversinha, terceirizamos todo seu marketing através de estratégias de marketing que vão muito além de rede social. Criamos uma imersão em experiência e resultado, nascemos  grandes e somos o dream team com as melhores mentes do mercado, prontos pra fazer seu negócio evoluir todos os dias.
+              </h5>
+            </span>
           </div>
         </section>
-      </main>
+        <section className="h-[100vh] xl:w-[60%] xs:w-full mx-[auto] max-w-[2xl] py-[6rem] xl:pl-0 xs:pl-[2rem]">
+          <div className={`
+            flex
+            items-start
+            w-full
+            justify-between
+            xl:flex-nowrap
+            xs:flex-wrap
+            animate__animated
+            animate__bounce
+            animate__fadeInDown animate__slow	1s
+            gap-y-[2rem]
+          `}>
+            <div className={`${fontSizeBanner} w-full grid `}>
+              <h3>
+                Evolua
+              </h3>
+              <h3>todos os </h3>
+              <h3> dias com </h3>
+              <h3>a gente</h3>
+              <div className="xl:w-[80%] xs:w-[100%] grid justify-start mt-[2rem]">
+                <DefaultButton>
+                  Quero ter + resultados
+                </DefaultButton>
+              </div>
+            </div>
+            <ul className="w-full ">
+              {['assessoria de markegin', 'branding visual', 'lançamentos 360º', 'produção web'].map((item, index) => (
+                <li key={`${item}-${index}`} className="cursor-[pointer]">
+                  <div className="flex justify-between items-center" onClick={() => { onOpen(`${item}-${index}`) }}>
+                    <h3 className="font-bold bg-transparent" style={{
+                      fontSize: 'max(1.5rem, 1.75vw)'
+                    }}>
+                      {item}
+                    </h3>
+
+                    <div data-open={`${item}-${index}` === openItem} className={`
+                        w-[3rem]
+                        h-[3rem]
+                        transition-all
+                        data-[open="true"]:rotate-[-180deg]
+                      `}>
+
+                      <NextImage src="static\images\arrow-down.svg" alt="arrow-down" />
+                    </div>
+
+                  </div>
+                  <div
+                    data-open={`${item}-${index}` === openItem}
+                    className={`
+                      h-0
+                      grid
+                      place-items-center
+                      px-[5px]
+                      data-[open="true"]:h-[12rem]
+                      overflow-y-hidden
+                      transition-all
+                    `}>
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+          </div>
+
+
+        </section>
+      </main >
       <footer>
 
-        <p>3
+        <p>
           Copyright © 2023 Agência Drip. Todos os direitos reservados.
         </p>
       </footer>
