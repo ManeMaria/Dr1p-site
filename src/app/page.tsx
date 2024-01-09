@@ -1,10 +1,11 @@
 'use client';
-
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { Carousel, DefaultButton, DynamicHeader, LabelButton } from "@/components";
 import NextImage from "@/components/NextImage";
 import { useOnScroll } from "@/hooks";
 import { useState } from "react";
+import { links } from "./data/urlsIcons";
 
 const fontSizeBanner = 'xs:text-[3rem] xl:text-[5.3vw]';
 
@@ -24,7 +25,7 @@ export default function Home() {
     <>
       <DynamicHeader />
       <main >
-        <section className="h-[100vh] xl:w-[60%] xs:w-full mx-[auto]  max-w-[2xl] xl:pl-0 xs:pl-[2rem]">
+        <section className="h-[90vh] xl:w-[60%] xs:w-full mx-[auto]  max-w-[2xl] xl:pl-0 xs:pl-[2rem]">
           <span className="flex items-center w-full justify-between xl:flex-nowrap  xs:flex-wrap animate__animated animate__bounce animate__fadeInDown animate__slow	1s">
             <h3 className={`${fontSizeBanner} `}>
               Creative
@@ -178,6 +179,25 @@ export default function Home() {
           </div>
 
 
+        </section>
+        <section className="w-full overflow-x-hidden py-[15rem]">
+          <ul className="flex" style={{
+            animation: 'slide 10s linear infinite',
+
+          }}>
+            {links.map((item) => (
+              <li
+                key={item}
+              >
+                <img
+                  src={item}
+                  alt={`logo ${item}`}
+                  className="h-[5rem] max-w-[10rem] mx-[1rem] object-contain basis-[100%]"
+                />
+              </li>
+            ))}
+
+          </ul>
         </section>
       </main >
       <footer>
