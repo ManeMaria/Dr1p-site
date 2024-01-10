@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
+import Head from 'next/head';
 import { Noto_Sans } from 'next/font/google'
 
 import dynamic from 'next/dynamic';
 
 import './globals.css'
 import 'animate.css';
-import Head from 'next/head';
 
 const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
   ssr: false,
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: 'favicon-16x16.png',
-        href: '/favicon-16x16.png',
+        url: 'favicon.ico',
+        href: 'favicon.ico',
       }
     ]
   },
@@ -69,9 +69,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className='scroll-smooth'>
       <Head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />

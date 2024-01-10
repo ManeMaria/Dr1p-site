@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Head from "next/head";
 
 import { Carousel, DefaultButton, DynamicHeader, LabelButton } from "@/components";
 import NextImage from "@/components/NextImage";
@@ -25,6 +26,7 @@ export default function Home() {
   }
   return (
     <>
+
       <DynamicHeader />
       <main>
         <section className="h-[90vh] xl:w-[70%] xs:w-full mx-[auto]  max-w-[2xl] xl:pl-0 xs:pl-[2rem]">
