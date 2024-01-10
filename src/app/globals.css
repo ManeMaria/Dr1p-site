@@ -44,7 +44,8 @@ ul {
 .btn5 {
   overflow: hidden;
   transition: all 300ms ease;
-
+  border: 2px solid;
+  border-color: #000;
 }
 
 .btn-txt {
@@ -58,7 +59,7 @@ ul {
   left: -300%;
   transform: skewX(35deg);
   background-color: #000;
-  transition: all 0.5s ease-in-out;
+  transition: all 300ms ease;
 }
 
 .btn5:hover .btn-txt {
@@ -70,14 +71,15 @@ ul {
 
 .btn5:hover::after {
   left: -75%;
-  transition: all 0.5s ease-in-out;
+  border: 2px solid #fff;
+
 
 }
 
 .btn5:hover {
   border: 2px solid;
   border-color: #fff;
-  transition: all 05s ease-in-out;
+  transition: all 300ms ease;
 }
 
 @keyframes slide {

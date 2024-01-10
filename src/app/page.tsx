@@ -7,6 +7,7 @@ import { useOnScroll } from "@/hooks";
 import { useState } from "react";
 import { links } from "./data/urlsIcons";
 
+
 const fontSizeBanner = 'xs:text-[3rem] xl:text-[5.3vw]';
 
 export default function Home() {
@@ -24,8 +25,8 @@ export default function Home() {
   return (
     <>
       <DynamicHeader />
-      <main >
-        <section className="h-[90vh] xl:w-[60%] xs:w-full mx-[auto]  max-w-[2xl] xl:pl-0 xs:pl-[2rem]">
+      <main>
+        <section className="h-[90vh] xl:w-[70%] xs:w-full mx-[auto]  max-w-[2xl] xl:pl-0 xs:pl-[2rem]">
           <span className="flex items-center w-full justify-between xl:flex-nowrap  xs:flex-wrap animate__animated animate__bounce animate__fadeInDown animate__slow	1s">
             <h3 className={`${fontSizeBanner} `}>
               Creative
@@ -110,7 +111,7 @@ export default function Home() {
             </span>
           </div>
         </section>
-        <section className="h-[100vh] xl:w-[60%] xs:w-full mx-[auto] max-w-[2xl] py-[6rem] xl:pl-0 xs:pl-[2rem]">
+        <section className="min-h-[100vh] xl:w-[70%] xs:w-full mx-[auto] max-w-[2xl] py-[6rem] xl:pl-0 xs:pl-[2rem]">
           <div className={`
             flex
             items-start
@@ -180,7 +181,7 @@ export default function Home() {
 
 
         </section>
-        <section className="w-full overflow-x-hidden py-[15rem]">
+        <section className="w-full overflow-x-hidden py-[8rem] bg-white">
           <ul className="flex" style={{
             animation: 'slide 10s linear infinite',
 
@@ -192,19 +193,86 @@ export default function Home() {
                 <img
                   src={item}
                   alt={`logo ${item}`}
-                  className="h-[5rem] max-w-[10rem] mx-[1rem] object-contain basis-[100%]"
+                  className="h-[5rem] max-w-[10rem] mx-[1rem] object-contain basis-[100%] invert"
                 />
               </li>
             ))}
 
           </ul>
         </section>
-      </main >
-      <footer>
+        <section className="min-h-[100vh] xl:w-[70%] xs:w-full mx-[auto] max-w-[2xl] py-[6rem] xl:pl-0 xs:pl-[2rem] gap-y-[2rem]">
+          <div className={`
+            flex
+            items-start
+            w-full
+            justify-between
+            xl:flex-nowrap
+            xs:flex-wrap
+            animate__animated
+            animate__bounce
+            animate__fadeInDown animate__slow	1s
+            gap-y-[2rem]
+          `}>
+            <div className={`${fontSizeBanner} w-full grid items-start`}>
+              <h3 style={{
+                fontSize: 'max(2.5rem,4vw)'
+              }}>
+                Não deixe</h3>
+              <h3 style={{
+                fontSize: 'max(2.5rem,4vw)'
+              }}>
+                o marketing</h3>
+              <h3 style={{
+                fontSize: 'max(2.5rem,4vw)'
+              }}>
+                do seu</h3>
+              <h3 style={{
+                fontSize: 'max(2.5rem,4vw)'
+              }}>
+                negócio em</h3>
+              <h3 style={{
+                fontSize: 'max(2.5rem,4vw)'
+              }}>
+                2º plano</h3>
+              <h4 className="text-[1rem] mt-[2rem]">
+                Preencha o formulário para receber uma proposta do nosso time comercial pelo WhatsApp.
+              </h4>
+            </div>
+            <div className="w-full bg-red-400 grid place-items-center bg-red-400">
+              <iframe
+                id="JotFormIFrame-240087678142662"
+                title="Fake form test"
+                allowTransparency
+                allowFullScreen
+                allow="geolocation; microphone; camera"
+                src="https://form.jotform.com/240087678142662"
+                style={{
+                  minWidth: '100%',
+                  height: '1000px',
+                  border: 'none'
+                }}
+                scrolling="no"
+              >
+              </iframe>
 
+            </div>
+
+          </div>
+
+        </section>
+      </main >
+      <footer className="xl:py-[5rem] xl:pl-[2rem] xs:p-[2rem]">
         <p>
           Copyright © 2023 Agência Drip. Todos os direitos reservados.
         </p>
+        <nav className="w-full grid justify-end">
+          <Link href="/">
+            <div className="h-[3rem] w-[3rem] rotate-[180deg]" aria-label="voltar ao top" title="voltar ao top">
+              <NextImage src="static\images\arrow-down.svg" alt="arrow-down" />
+            </div>
+          </Link>
+        </nav>
+
       </footer>
     </>
   )

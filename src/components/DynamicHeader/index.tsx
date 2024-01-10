@@ -44,7 +44,7 @@ export function DynamicHeader() {
         </>
 
       ) : (
-        <nav className="flex justify-between w-[60%] mx-[auto]  max-w-[2xl] animate__animated animate__bounce animate__fadeIn animate__delay-2s text-2xl">
+        <nav className="flex justify-between w-[70%] mx-[auto]  max-w-[2xl] animate__animated animate__bounce animate__fadeIn animate__delay-2s text-2xl">
           <Logo />
           <NavMenu />
         </nav>
