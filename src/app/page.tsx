@@ -1,6 +1,7 @@
 'use client';
-import { motion } from "framer-motion";
+
 import Link from "next/link";
+
 import { Carousel, DefaultButton, DynamicHeader, LabelButton } from "@/components";
 import NextImage from "@/components/NextImage";
 import { useOnScroll } from "@/hooks";
