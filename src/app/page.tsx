@@ -8,9 +8,13 @@ import NextImage from "@/components/NextImage";
 import { useOnScroll } from "@/hooks";
 import { useState } from "react";
 import { links } from "./data/urlsIcons";
+import dynamic from "next/dynamic";
 
+const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
+  ssr: false,
+});
 
-const fontSizeBanner = 'xs:text-[3rem] xl:text-[5.3vw]';
+const fontSizeBanner = 'xs:text-[3rem] xl:text-[5rem]';
 
 export default function Home() {
   const [openItem, setOpen] = useState('')
@@ -26,16 +30,36 @@ export default function Home() {
   }
   return (
     <>
+      <Head>
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+      </Head>
+      <AnimatedCursor
+        innerSize={0}
+        outerSize={50}
+        outerScale={1.7}
+        trailingSpeed={9}
+        showSystemCursor
+        outerStyle={{
+          backgroundColor: 'transparent',
+          border: '3px solid #fff',
+          mixBlendMode: 'exclusion',
+        }}
+      />
 
       <DynamicHeader />
       <main>
-        <section className="h-[90vh] xl:w-[70%] xs:w-full mx-[auto]  max-w-[2xl] xl:pl-0 xs:pl-[2rem]">
+        <section className="h-[90vh] xl:w-[70%] xs:w-full mx-[auto] max-w-7xl xl:pl-0 xs:pl-[2rem]">
           <span className="flex items-center w-full justify-between xl:flex-nowrap  xs:flex-wrap animate__animated animate__bounce animate__fadeInDown animate__slow	1s">
             <h3 className={`${fontSizeBanner} `}>
               Creative
             </h3>
-            <h3 className="xl:text-sm xs:text-xs mt-[10px] ">
-              Somos uma agência de inteligência social,<br />
+            <h3 className="xl:text-xl xs:text-xs">
+              Somos uma agência de inteligência social,<br /><br />
               que conecta pessoas, marcas e histórias.
             </h3>
           </span>
@@ -51,14 +75,14 @@ export default function Home() {
             <h3 className={`${fontSizeBanner}`}>
               We are
             </h3>
-            <h3>
+            <h3 className="xl:text-xl">
               <Link href="https://www.instagram.com/agenciadrip/" target="_blank" >
                 @agenciadrip
               </Link>
             </h3>
           </span>
-          <span className="flex items-center ml-[40px] gap-[30%] xl:flex-nowrap  xs:flex-wrap animate__animated animate__bounce animate__fadeInDown animate__slow	3s">
-            <h3>
+          <span className="flex items-center  ml-[40px] gap-[30%] xl:flex-nowrap   xs:flex-wrap animate__animated animate__bounce animate__fadeInDown animate__slow	3s">
+            <h3 className="xl:text-xl">
               www.agenciadrip.com.br
             </h3>
             <h3 className={`${fontSizeBanner} font-bold`}>
@@ -87,11 +111,13 @@ export default function Home() {
           </div>
         </section >
         <section className="bg-white text-black h-[100vdh] py-[4rem]">
-          <div className="grid xl:grid-cols-2 xs:grid-cols-1">
-            <div ref={refSection3Image} className={`xl:w-[80%] xs:w-[100%]  h-[80%]  animate__animated animate__bounce ${visibleSection3Image ? 'animate__fadeInLeft' : ''} animate__slow	3s`} >
+          <div className="grid xl:grid-cols-2 xs:grid-cols-1 items-center">
+            <div ref={refSection3Image} className={`xl:w-[80%] xs:w-[100%] h-[70%]  animate__animated animate__bounce ${visibleSection3Image ? 'animate__fadeInLeft' : ''} animate__slow	3s`} >
               <img className="max-w-[none] w-[100%] h-[100%] object-cover" src={`https://images.unsplash.com/photo-1493612276216-ee3925520721?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fHww`} alt="arrow-down" />
             </div>
-            <span className={`w-[100%]
+            <span className={`
+              max-w-3xl 
+              w-[100%]
               flex
               flex-col
               justify-center
@@ -102,19 +128,25 @@ export default function Home() {
               animate__bounce
               ${visibleSection3Image ? 'animate__fadeInRight' : ''}
               animate__slow	3s`}>
-              <h3 className="font-bold xl:text-[4vw] xs:text-[10vw] bg-transparent uppercase" >
+              <h3 className={` ${fontSizeBanner} font-bold bg-transparent uppercase`} >
                 Menos do mesmo
               </h3>
-              <h4 className="font-bold bg-transparent my-[5px]">
+              <h4 className="font-bold bg-transparent mt-[5px]  xl:text-2xl">
                 Nos movemos diferentes para aqueles que querem diferença
               </h4>
-              <h5>
+              <h5 className="xl:text-2xl my-[20px]">
                 Sem conversinha, terceirizamos todo seu marketing através de estratégias de marketing que vão muito além de rede social. Criamos uma imersão em experiência e resultado, nascemos  grandes e somos o dream team com as melhores mentes do mercado, prontos pra fazer seu negócio evoluir todos os dias.
               </h5>
+
+              <div className="xl:w-[80%] xs:w-[100%] grid justify-start mt-[2rem]">
+                <DefaultButton>
+                  Quero ter + resultados
+                </DefaultButton>
+              </div>
             </span>
           </div>
         </section>
-        <section className="min-h-[100vh] xl:w-[70%] xs:w-full mx-[auto] max-w-[2xl] py-[6rem] xl:pl-0 xs:pl-[2rem]">
+        <section className="min-h-[100vh] xl:w-[70%] xs:w-full mx-[auto] max-w-7xl py-[6rem] xl:pl-0 xs:pl-[2rem]">
           <div className={`
             flex
             items-start
@@ -127,7 +159,7 @@ export default function Home() {
             animate__fadeInDown animate__slow	1s
             gap-y-[2rem]
           `}>
-            <div className={`${fontSizeBanner} w-full grid `}>
+            <div className={`${fontSizeBanner} w-full grid font-bol`}>
               <h3>
                 Evolua
               </h3>
@@ -141,7 +173,7 @@ export default function Home() {
               </div>
             </div>
             <ul className="w-full ">
-              {['assessoria de markegin', 'branding visual', 'lançamentos 360º', 'produção web'].map((item, index) => (
+              {['assessoria de marketing', 'branding visual', 'lançamentos 360º', 'produção web'].map((item, index) => (
                 <li key={`${item}-${index}`} className="cursor-[pointer]">
                   <div className="flex justify-between items-center" onClick={() => { onOpen(`${item}-${index}`) }}>
                     <h3 className="font-bold bg-transparent" style={{
@@ -154,6 +186,7 @@ export default function Home() {
                         w-[3rem]
                         h-[3rem]
                         transition-all
+                        duration-700
                         data-[open="true"]:rotate-[-180deg]
                       `}>
 
@@ -171,6 +204,7 @@ export default function Home() {
                       data-[open="true"]:h-[12rem]
                       overflow-y-hidden
                       transition-all
+                      duration-700
                     `}>
                     <p>
                       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -203,7 +237,7 @@ export default function Home() {
 
           </ul>
         </section>
-        <section className="min-h-[100vh] xl:w-[70%] xs:w-full mx-[auto] max-w-[2xl] py-[6rem] xl:pl-0 xs:pl-[2rem] gap-y-[2rem]">
+        <section className="min-h-[100vh] xl:w-[70%] xs:w-full mx-[auto] max-w-7xl py-[6rem] xl:pl-0 xs:pl-[2rem] gap-y-[2rem]">
           <div className={`
             flex
             items-start
@@ -216,32 +250,22 @@ export default function Home() {
             animate__fadeInDown animate__slow	1s
             gap-y-[2rem]
           `}>
-            <div className={`${fontSizeBanner} w-full grid items-start`}>
-              <h3 style={{
-                fontSize: 'max(2.5rem,4vw)'
-              }}>
+            <div className={`${fontSizeBanner} w-full grid items-start xs: font-[2.5rem] xl: font-[3rem]`}>
+              <h3>
                 Não deixe</h3>
-              <h3 style={{
-                fontSize: 'max(2.5rem,4vw)'
-              }}>
+              <h3>
                 o marketing</h3>
-              <h3 style={{
-                fontSize: 'max(2.5rem,4vw)'
-              }}>
+              <h3>
                 do seu</h3>
-              <h3 style={{
-                fontSize: 'max(2.5rem,4vw)'
-              }}>
+              <h3>
                 negócio em</h3>
-              <h3 style={{
-                fontSize: 'max(2.5rem,4vw)'
-              }}>
+              <h3>
                 2º plano</h3>
-              <h4 className="text-[1rem] mt-[2rem]">
+              <h4 className="text-xl mt-[2rem] ">
                 Preencha o formulário para receber uma proposta do nosso time comercial pelo WhatsApp.
               </h4>
             </div>
-            <div className="w-full bg-red-400 grid place-items-center bg-red-400">
+            <div className="w-full grid place-items-center">
               <iframe
                 id="JotFormIFrame-240087678142662"
                 title="Fake form test"
@@ -257,15 +281,12 @@ export default function Home() {
                 scrolling="no"
               >
               </iframe>
-
             </div>
-
           </div>
-
         </section>
       </main >
-      <footer className="xl:py-[5rem] xl:pl-[2rem] xs:p-[2rem]">
-        <p>
+      <footer className="xl:py-[5rem] xl:pl-[2rem] xs:p-[2rem] xl:max-w-7xl flex justify-center items-end mx-auto">
+        <p className="w-full">
           Copyright © 2023 Agência Drip. Todos os direitos reservados.
         </p>
         <nav className="w-full grid justify-end">
@@ -275,7 +296,6 @@ export default function Home() {
             </div>
           </Link>
         </nav>
-
       </footer>
     </>
   )

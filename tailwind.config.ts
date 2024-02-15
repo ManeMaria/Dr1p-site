@@ -29,6 +29,9 @@ const config: Config = {
       textColor: {
         default: '#ffffff',
       },
+      fontSize: {
+        'xl': '1.5rem',
+      },
     },
   },
   plugins: [],

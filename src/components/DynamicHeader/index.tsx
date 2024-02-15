@@ -29,7 +29,7 @@ export function DynamicHeader() {
 
 
   return (
-    <header className="w-full lg:pt-[5rem] xs:pt-[2rem]">
+    <header className="w-full lg:pt-[5rem] xs:pt-[2rem] xl:mb-[5rem]">
       {isMobile ? (
         <>
           <span className="flex w-full justify-between pl-[2rem] align-end">
@@ -44,7 +44,7 @@ export function DynamicHeader() {
         </>
 
       ) : (
-        <nav className="flex justify-between w-[70%] mx-[auto]  max-w-[2xl] animate__animated animate__bounce animate__fadeIn animate__delay-2s text-2xl">
+        <nav className="flex justify-between w-[70%] mx-[auto]  max-w-7xl animate__animated animate__bounce animate__fadeIn animate__delay-2s text-2xl">
           <Logo />
           <NavMenu />
         </nav>
