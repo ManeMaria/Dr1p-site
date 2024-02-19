@@ -22,7 +22,6 @@ export default function Home() {
   const { visible: visibleSection3Image, elementRef: refSection3Image } = useOnScroll()
 
   const onOpen = (item: string) => {
-    console.log('currentItem', item)
     setOpen((currentItem) => {
       console.log('currentItem', currentItem, currentItem === item ? '' : item)
       return currentItem === item ? '' : item
@@ -103,11 +102,48 @@ export default function Home() {
             <span className='xl:w-[64%] xs:w-[45%] bg-gray-300 h-[2px] overflow-hidden ' />
           </span>
           <Carousel />
-          <div className="flex items-center justify-end pr-[10%] w-full items-center text-[1.6rem]">
-            <p>confira nossos cases </p>
-            <span className="-rotate-[90deg]">
-              <LabelButton />
-            </span>
+        </section >
+        <section className="bg-white text-black" id='projects' >
+          <div className="grid grid-cols-2 w-full h-full">
+            <div>
+              <NextImage alt="carneiros" src="/static/images/carneiros.avif" />
+            </div>
+            <div className="p-[10rem]">
+              <h2 className={`text-[3.5rem] font-bold`}>
+                Réveillon Carneiros 2023
+              </h2>
+              <h3 className={`text-[2rem] my-[2rem]`}>Visual Identity</h3>
+              <h3 className={`text-[3rem]`}>
+                O Réveillon Carneiros está indo para o seu quinto ano e se consolida como um dos maiores Réveillons do Brasil.
+              </h3>
+              <div className="xl:w-[80%] xs:w-[100%] grid justify-start mt-[2rem]">
+                <DefaultButton style={{
+                  '&:hover img': {
+                    'backdrop-filter': 'invert(0)'
+
+                  }
+                }}>
+                  <span className="flex">
+                    <p className=" ml-[1rem]">
+                      mais
+                    </p>
+                    <div className="h-[2rem] w-[2rem] -rotate-[90deg] ml-[1rem]">
+                      <NextImage src="/static/images/arrow-down-black.svg" alt="arrow-down" />
+                    </div>
+                  </span>
+                </DefaultButton>
+              </div>
+            </div>
+            <div className="p-[10rem]">
+              <h2 className={`text-[3.5rem] font-bold`}>
+                Red Bull Pitaya
+              </h2>
+              <h3 className={`text-[2rem] my-[2rem]`}>Visual Identity</h3>
+              <h3 className={`text-[2.8rem]`}>
+                A Red Bull realizou uma ação de marketing ativando os principais eventos de réveillon do Brasil para o lançamento do seu novo produto, o Red Bull Pitaya.
+              </h3>
+            </div>
+            <div> <NextImage alt="redbull-pitaya" src="/static/images/redbull-pitaya.avif" /></div>
           </div>
         </section >
         <section className="bg-white text-black h-[100vdh] py-[4rem]">
