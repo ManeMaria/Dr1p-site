@@ -11,6 +11,7 @@ import { useState } from "react";
 import { links } from "./data/urlsIcons";
 import dynamic from "next/dynamic";
 
+
 const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
   ssr: false,
 });
@@ -21,13 +22,15 @@ export default function Home() {
   const [openItem, setOpen] = useState('')
   const { visible, elementRef } = useOnScroll()
   const { visible: visibleSection3Image, elementRef: refSection3Image } = useOnScroll()
-
+  const { visible: visibleSection4Image, elementRef: refSection4Image } = useOnScroll()
+  const { visible: visibleSection5Image, elementRef: refSection5Image } = useOnScroll()
   const onOpen = (item: string) => {
     setOpen((currentItem) => {
-      console.log('currentItem', currentItem, currentItem === item ? '' : item)
       return currentItem === item ? '' : item
     })
   }
+
+  console.log('visibleSection4Image :>> ', visibleSection4Image);
   return (
     <>
       <Head>
@@ -52,6 +55,7 @@ export default function Home() {
       />
 
       <DynamicHeader />
+
       <main>
         <section className="h-[90vh] xl:w-[70%] xs:w-full mx-[auto] max-w-7xl xl:pl-0 xs:pl-[2rem]">
           <span className="flex items-center w-full justify-between xl:flex-nowrap  xs:flex-wrap animate__animated animate__bounce animate__fadeInDown animate__slow	1s">
@@ -105,11 +109,11 @@ export default function Home() {
           <Carousel />
         </section >
         <section className="bg-white text-black" id='projects' >
-          <div className="grid grid-cols-2 w-full h-full">
+          <div className="grid grid-cols-2 w-full h-full" >
             <div>
               <NextImage alt="carneiros" src="/static/images/carneiros.avif" />
             </div>
-            <div className="p-[10rem]">
+            <div ref={refSection4Image} className={`p-[10rem] animate__animated animate__bounce  ${visibleSection4Image ? 'animate__fadeInRight' : ''}`}>
               <h2 className={`text-[3.5rem] font-bold`}>
                 Réveillon Carneiros 2023
               </h2>
@@ -130,25 +134,27 @@ export default function Home() {
                 </DefaultButtonColorWhite>
               </div>
             </div>
-            <div className="p-[10rem] bg-black text-white">
-              <h2 className={`text-[3.5rem] font-bold`}>
-                Red Bull Pitaya
-              </h2>
-              <h3 className={`text-[2rem] my-[2rem]`}>Visual Identity</h3>
-              <h3 className={`text-[2.5rem]`}>
-                A Red Bull realizou uma ação de marketing ativando os principais eventos de réveillon do Brasil para o lançamento do seu novo produto, o Red Bull Pitaya.
-              </h3>
-              <div className="xl:w-[80%] xs:w-[100%] grid justify-start mt-[2rem]">
-                <DefaultButtonColorBlack >
-                  <span className="flex">
-                    <p className=" ml-[1rem]">
-                      mais
-                    </p>
-                    <div className="h-[2rem] w-[2rem] -rotate-[90deg] ml-[1rem]">
-                      <NextImage src="/static/images/arrow-down.svg" alt="arrow-down" className="arrow-black" />
-                    </div>
-                  </span>
-                </DefaultButtonColorBlack>
+            <div className={`bg-black text-white p-[10rem]`}>
+              <div ref={refSection5Image} className={`animate__animated animate__bounce  ${visibleSection5Image ? 'animate__fadeInLeft' : ''}`}>
+                <h2 className={`text-[3.5rem] font-bold`}>
+                  Red Bull Pitaya
+                </h2>
+                <h3 className={`text-[2rem] my-[2rem]`}>Visual Identity</h3>
+                <h3 className={`text-[2.5rem]`}>
+                  A Red Bull realizou uma ação de marketing ativando os principais eventos de réveillon do Brasil para o lançamento do seu novo produto, o Red Bull Pitaya.
+                </h3>
+                <div className="xl:w-[80%] xs:w-[100%] grid justify-start mt-[2rem]">
+                  <DefaultButtonColorBlack >
+                    <span className="flex">
+                      <p className=" ml-[1rem]">
+                        mais
+                      </p>
+                      <div className="h-[2rem] w-[2rem] -rotate-[90deg] ml-[1rem]">
+                        <NextImage src="/static/images/arrow-down.svg" alt="arrow-down" className="arrow-black" />
+                      </div>
+                    </span>
+                  </DefaultButtonColorBlack>
+                </div>
               </div>
             </div>
             <div> <NextImage alt="redbull-pitaya" src="/static/images/redbull-pitaya.avif" /></div>

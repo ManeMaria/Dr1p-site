@@ -1,5 +1,28 @@
 import { useEffect, useRef, useState } from 'react';
 
+const throttle = <T extends (...args: any[]) => void>(
+  func: T,
+  wait: number
+): T => {
+  let timeout: NodeJS.Timeout | null;
+
+  return function (this: any, ...args: any[]) {
+    const context = this;
+
+    const later = () => {
+      timeout = null;
+      func.apply(context, args);
+    };
+
+    clearTimeout(timeout as NodeJS.Timeout);
+    timeout = setTimeout(later, wait);
+  } as T;
+};
+
+const throttledFunction = throttle((arg: VoidFunction) => {
+  arg();
+}, 400);
+
 export const useOnScroll = () => {
   const [visible, setVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
@@ -13,9 +36,7 @@ export const useOnScroll = () => {
 
     const handleIntersect = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-        }
+        throttledFunction(() => { setVisible(entry.isIntersecting); })
       });
     };
 
