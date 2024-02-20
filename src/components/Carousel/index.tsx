@@ -32,13 +32,14 @@ export function Carousel() {
   return (
     <ul className={`grid xl:grid-cols-3 xs:grid-cols-2 items-center`} >
       {images.slice(0, 6).map((image, i) => (
-        <li key={`${image}_${i}`} className="hover-effect">
+        <li key={`${image}_${i}`}>
           <iframe
             key={`${image}_${i}`}
             src={image}
             allowFullScreen
             allow="clipboard-write"
             className={`
+                     
                       xl:w-[33vw]
                       xs:w-[50vw]
                       max-w-[none]

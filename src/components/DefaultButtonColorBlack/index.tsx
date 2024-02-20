@@ -1,14 +1,14 @@
 import React, { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
 
-export function DefaultButton({
+export function DefaultButtonColorBlack({
   children, ...props
 }: DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement
 >
 ) {
   return (
-    <button type='button' className='uppercase btn btn5' {...props} >
-      <h4 className='btn-txt'>{children}</h4>
+    <button type='button' className='uppercase btn-w btn5-w' {...props} >
+      <h4 className='btn-w-txt'>{children}</h4>
     </button>
   )
 }

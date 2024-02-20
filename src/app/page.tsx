@@ -1,9 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import Link from "next/link";
 import Head from "next/head";
 
-import { Carousel, DefaultButton, DynamicHeader, LabelButton } from "@/components";
+import { Carousel, DynamicHeader, DefaultButtonColorWhite, DefaultButtonColorBlack } from "@/components";
 import NextImage from "@/components/NextImage";
 import { useOnScroll } from "@/hooks";
 import { useState } from "react";
@@ -96,7 +97,7 @@ export default function Home() {
         </section>
         <section className="bg-white text-black " id='projects' >
           <span ref={elementRef} className={`w-full flex items-center animate__animated animate__bounce ${visible ? 'animate__fadeInDown ' : ''} animate__slow	3s`}>
-            <h2 className="font-bold xl:text-[10vw] xs:text-[20vw] bg-transparent " >
+            <h2 id='work' className="font-bold xl:text-[10vw] xs:text-[20vw] bg-transparent " >
               WORK
             </h2>
             <span className='xl:w-[64%] xs:w-[45%] bg-gray-300 h-[2px] overflow-hidden ' />
@@ -113,40 +114,48 @@ export default function Home() {
                 Réveillon Carneiros 2023
               </h2>
               <h3 className={`text-[2rem] my-[2rem]`}>Visual Identity</h3>
-              <h3 className={`text-[3rem]`}>
+              <h3 className={`text-[2.5rem]`}>
                 O Réveillon Carneiros está indo para o seu quinto ano e se consolida como um dos maiores Réveillons do Brasil.
               </h3>
               <div className="xl:w-[80%] xs:w-[100%] grid justify-start mt-[2rem]">
-                <DefaultButton style={{
-                  '&:hover img': {
-                    'backdrop-filter': 'invert(0)'
-
-                  }
-                }}>
+                <DefaultButtonColorWhite >
                   <span className="flex">
                     <p className=" ml-[1rem]">
                       mais
                     </p>
                     <div className="h-[2rem] w-[2rem] -rotate-[90deg] ml-[1rem]">
-                      <NextImage src="/static/images/arrow-down-black.svg" alt="arrow-down" />
+                      <NextImage src="/static/images/arrow-down-black.svg" alt="arrow-down" className="arrow-black" />
                     </div>
                   </span>
-                </DefaultButton>
+                </DefaultButtonColorWhite>
               </div>
             </div>
-            <div className="p-[10rem]">
+            <div className="p-[10rem] bg-black text-white">
               <h2 className={`text-[3.5rem] font-bold`}>
                 Red Bull Pitaya
               </h2>
               <h3 className={`text-[2rem] my-[2rem]`}>Visual Identity</h3>
-              <h3 className={`text-[2.8rem]`}>
+              <h3 className={`text-[2.5rem]`}>
                 A Red Bull realizou uma ação de marketing ativando os principais eventos de réveillon do Brasil para o lançamento do seu novo produto, o Red Bull Pitaya.
               </h3>
+              <div className="xl:w-[80%] xs:w-[100%] grid justify-start mt-[2rem]">
+                <DefaultButtonColorBlack >
+                  <span className="flex">
+                    <p className=" ml-[1rem]">
+                      mais
+                    </p>
+                    <div className="h-[2rem] w-[2rem] -rotate-[90deg] ml-[1rem]">
+                      <NextImage src="/static/images/arrow-down.svg" alt="arrow-down" className="arrow-black" />
+                    </div>
+                  </span>
+                </DefaultButtonColorBlack>
+              </div>
             </div>
             <div> <NextImage alt="redbull-pitaya" src="/static/images/redbull-pitaya.avif" /></div>
+
           </div>
         </section >
-        <section className="bg-white text-black h-[100vdh] py-[4rem]">
+        <section className="bg-white text-black h-[100vdh]">
           <div className="grid xl:grid-cols-2 xs:grid-cols-1 items-center">
             <div ref={refSection3Image} className={`xl:w-[80%] xs:w-[100%] h-[70%]  animate__animated animate__bounce ${visibleSection3Image ? 'animate__fadeInLeft' : ''} animate__slow	3s`} >
               <img className="max-w-[none] w-[100%] h-[100%] object-cover" src={`https://images.unsplash.com/photo-1493612276216-ee3925520721?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fHww`} alt="arrow-down" />
@@ -175,9 +184,9 @@ export default function Home() {
               </h5>
 
               <div className="xl:w-[80%] xs:w-[100%] grid justify-start mt-[2rem]">
-                <DefaultButton>
+                <DefaultButtonColorWhite>
                   Quero ter + resultados
-                </DefaultButton>
+                </DefaultButtonColorWhite>
               </div>
             </span>
           </div>
@@ -195,7 +204,7 @@ export default function Home() {
             animate__fadeInDown animate__slow	1s
             gap-y-[2rem]
           `}>
-            <div className={`${fontSizeBanner} w-full grid font-bol`}>
+            <div className={`${fontSizeBanner} w-full grid font-bold`}>
               <h3>
                 Evolua
               </h3>
@@ -203,9 +212,9 @@ export default function Home() {
               <h3> dias com </h3>
               <h3>a gente</h3>
               <div className="xl:w-[80%] xs:w-[100%] grid justify-start mt-[2rem]">
-                <DefaultButton>
+                <DefaultButtonColorWhite>
                   Quero ter + resultados
-                </DefaultButton>
+                </DefaultButtonColorWhite>
               </div>
             </div>
             <ul className="w-full ">
@@ -273,7 +282,7 @@ export default function Home() {
 
           </ul>
         </section>
-        <section className="min-h-[100vh] xl:w-[70%] xs:w-full mx-[auto] max-w-7xl py-[6rem] xl:pl-0 xs:pl-[2rem] gap-y-[2rem]">
+        <section id='contato' className="min-h-[100vh] xl:w-[70%] xs:w-full mx-[auto] max-w-7xl py-[6rem] xl:pl-0 xs:pl-[2rem] gap-y-[2rem]">
           <div className={`
             flex
             items-start
@@ -286,7 +295,7 @@ export default function Home() {
             animate__fadeInDown animate__slow	1s
             gap-y-[2rem]
           `}>
-            <div className={`${fontSizeBanner} w-full grid items-start xs: font-[2.5rem] xl: font-[3rem]`}>
+            <div className={`${fontSizeBanner} w-full grid items-start xs: font-[2.5rem] xl: font-[3rem] font-bold`}>
               <h3>
                 Não deixe</h3>
               <h3>

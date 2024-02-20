@@ -14,10 +14,10 @@ const NavMenu = () => (
       <a href="#">Início</a>
     </li>
     <li>
-      <a href="#">Work</a>
+      <a href="#work">Work</a>
     </li>
     <li>
-      <a href="#">Contato</a>
+      <a href="#contato">Contato</a>
     </li>
   </ul>
 );

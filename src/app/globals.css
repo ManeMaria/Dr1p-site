@@ -8,7 +8,8 @@ ul {
   margin: 0;
 }
 
-.btn {
+.btn,
+.btn-w {
   height: 60px;
   width: 100%;
   display: flex;
@@ -23,8 +24,16 @@ ul {
   padding: 0 30px;
 }
 
+.btn-w {
+  border-color: #fff;
+  background: #000;
+
+}
+
 .btn::before,
-.btn::after {
+.btn::after,
+.btn-w::before,
+.btn-w::after {
   position: absolute;
   display: block;
   content: "";
@@ -33,7 +42,8 @@ ul {
 
 }
 
-.btn-txt {
+.btn-txt,
+.btn-w-txt {
   font-weight: 400;
   text-transform: uppercase;
   font-size: 20px;
@@ -42,20 +52,35 @@ ul {
   font-weight: bold;
 }
 
+.btn-w-txt {
+  color: #fff;
+}
 
-.btn5 {
+
+.btn5,
+.btn5-w {
   overflow: hidden;
   transition: all 600ms ease;
   border: 2px solid;
   border-color: #000;
 }
 
-.btn-txt {
+.btn5-w {
+  border-color: #fff;
+}
+
+.btn-txt,
+.btn5-w-txt {
   color: #000;
   transition: all 600ms ease;
 }
 
-.btn5:after {
+.btn5-w-txt {
+  color: #fff;
+}
+
+.btn5:after,
+.btn5-w:after {
   width: 290%;
   height: 300%;
   left: -300%;
@@ -64,24 +89,46 @@ ul {
   transition: all 600ms ease;
 }
 
-.btn5:hover .btn-txt {
+.btn5-w:after {
+  background-color: #fff;
+}
+
+.btn5:hover .btn-txt,
+.btn5-w:hover .btn-w-txt {
   color: #fff;
   z-index: 10;
   font-weight: 600;
   transition: all 600ms ease;
 }
 
-.btn5:hover::after {
-  left: -75%;
-  border: 2px solid #fff;
-
-
+.btn5-w:hover .btn-w-txt {
+  color: #000;
 }
 
-.btn5:hover {
+.btn5:hover::after,
+.btn5-w:hover::after {
+  left: -75%;
+  border: 2px solid #fff;
+}
+
+.btn5-w:hover::after {
+  border: 2px solid;
+}
+
+.btn5:hover,
+.btn5-w:hover {
   border: 2px solid;
   border-color: #fff;
   transition: all 600ms ease;
+}
+
+.btn5-w:hover {
+  border: 2px solid;
+}
+
+.btn5:hover .arrow-black,
+.btn5-w:hover .arrow-black {
+  filter: invert(1);
 }
 
 @keyframes slide {
