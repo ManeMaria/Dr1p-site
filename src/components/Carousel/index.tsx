@@ -30,7 +30,7 @@ const images = [
 
 export function Carousel() {
   return (
-    <ul className={`grid xl:grid-cols-3 xs:grid-cols-2 items-center`} >
+    <ul className={`grid xl:grid-cols-3 xs:grid-cols-2 items-center xs:gap-[0.5rem]`} >
       {images.slice(0, 6).map((image, i) => (
         <li key={`${image}_${i}`}>
           <iframe
@@ -41,7 +41,8 @@ export function Carousel() {
             className={`
                      
                       xl:w-[33vw]
-                      xs:w-[50vw]
+                      xs:w-[100%]
+                      xs:h-[100%]
                       max-w-[none]
                       h-[30rem]
                       object-cover

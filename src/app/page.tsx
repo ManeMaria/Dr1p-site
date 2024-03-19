@@ -30,7 +30,6 @@ export default function Home() {
     })
   }
 
-  console.log('visibleSection4Image :>> ', visibleSection4Image);
   return (
     <>
       <Head>
@@ -108,17 +107,17 @@ export default function Home() {
           </span>
           <Carousel />
         </section >
-        <section className="bg-white text-black" id='projects' >
-          <div className="grid grid-cols-2 w-full h-full" >
+        <section className="bg-white text-black"  >
+          <div className="grid xl:grid-cols-2 xs:grid-cols-1 w-full h-full" >
             <div>
               <NextImage alt="carneiros" src="/static/images/carneiros.avif" />
             </div>
-            <div ref={refSection4Image} className={`p-[10rem] animate__animated animate__bounce  ${visibleSection4Image ? 'animate__fadeInRight' : ''}`}>
-              <h2 className={`text-[3.5rem] font-bold`}>
+            <div ref={refSection4Image} className={`xl:p-[10rem] xs:p-[2rem] animate__animated animate__bounce  ${visibleSection4Image ? 'animate__fadeInRight' : ''}`}>
+              <h2 className={`xl:text-[3.5rem] xs:text-[2rem] font-bold`}>
                 Réveillon Carneiros 2023
               </h2>
-              <h3 className={`text-[2rem] my-[2rem]`}>Visual Identity</h3>
-              <h3 className={`text-[2.5rem]`}>
+              <h3 className={`txl:text-[2rem] xs:text-[1rem]`}>Visual Identity</h3>
+              <h3 className={`xl:text-[2.5rem] xs:text-[1.5rem]`}>
                 O Réveillon Carneiros está indo para o seu quinto ano e se consolida como um dos maiores Réveillons do Brasil.
               </h3>
               <div className="xl:w-[80%] xs:w-[100%] grid justify-start mt-[2rem]">
@@ -134,13 +133,13 @@ export default function Home() {
                 </DefaultButtonColorWhite>
               </div>
             </div>
-            <div className={`bg-black text-white p-[10rem]`}>
+            <div className={`bg-black text-white xl:p-[10rem] xs:p-[2rem]`}>
               <div ref={refSection5Image} className={`animate__animated animate__bounce  ${visibleSection5Image ? 'animate__fadeInLeft' : ''}`}>
-                <h2 className={`text-[3.5rem] font-bold`}>
+                <h2 className={`xl:text-[3.5rem] xs:text-[2rem] font-bold`}>
                   Red Bull Pitaya
                 </h2>
-                <h3 className={`text-[2rem] my-[2rem]`}>Visual Identity</h3>
-                <h3 className={`text-[2.5rem]`}>
+                <h3 className={`xl:text-[2rem] xs:text-[1rem] my-[2rem]`}>Visual Identity</h3>
+                <h3 className={`xl:text-[2.5rem] xs:text-[1.5rem]`}>
                   A Red Bull realizou uma ação de marketing ativando os principais eventos de réveillon do Brasil para o lançamento do seu novo produto, o Red Bull Pitaya.
                 </h3>
                 <div className="xl:w-[80%] xs:w-[100%] grid justify-start mt-[2rem]">
@@ -157,47 +156,35 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div> <NextImage alt="redbull-pitaya" src="/static/images/redbull-pitaya.avif" /></div>
+            <div>
+              <NextImage alt="redbull-pitaya" src="/static/images/redbull-pitaya.avif" />
+            </div>
+            <div>
+              <img className="max-w-[none] w-[100%] h-[100%] max-h-[50rem] object-cover" src={`https://images.unsplash.com/photo-1493612276216-ee3925520721?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fHww`} alt="arrow-down" />
+            </div>
+            <div className={`bg-white text-black xl:p-[10rem] xs:p-[2rem]`}>
+              <div ref={refSection5Image} className={`animate__animated animate__bounce  ${visibleSection5Image ? 'animate__fadeInLeft' : ''} grid align-items-center `}>
+                <h3 className={` ${fontSizeBanner} font-bold bg-transparent`} >
+                  Menos do mesmo
+                </h3>
+                <h4 className="font-bold bg-transparent mt-[5px]  xl:text-2xl">
+                  Nos movemos diferentes para aqueles que querem diferença
+                </h4>
+                <h5 className="xl:text-2xl my-[20px]">
+                  Sem conversinha, terceirizamos todo seu marketing através de estratégias de marketing que vão muito além de rede social. Criamos uma imersão em experiência e resultado, nascemos  grandes e somos o dream team com as melhores mentes do mercado, prontos pra fazer seu negócio evoluir todos os dias.
+                </h5>
+
+                <div className="xl:w-[80%] xs:w-[100%] grid justify-start mt-[2rem]">
+                  <DefaultButtonColorWhite>
+                    Quero ter + resultados
+                  </DefaultButtonColorWhite>
+                </div>
+              </div>
+            </div>
 
           </div>
         </section >
-        <section className="bg-white text-black h-[100vdh]">
-          <div className="grid xl:grid-cols-2 xs:grid-cols-1 items-center">
-            <div ref={refSection3Image} className={`xl:w-[80%] xs:w-[100%] h-[70%]  animate__animated animate__bounce ${visibleSection3Image ? 'animate__fadeInLeft' : ''} animate__slow	3s`} >
-              <img className="max-w-[none] w-[100%] h-[100%] object-cover" src={`https://images.unsplash.com/photo-1493612276216-ee3925520721?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fHww`} alt="arrow-down" />
-            </div>
-            <span className={`
-              max-w-3xl 
-              w-[100%]
-              flex
-              flex-col
-              justify-center
-              w-full
-              xl:pl-0
-              xs:pl-[2rem]
-              animate__animated
-              animate__bounce
-              ${visibleSection3Image ? 'animate__fadeInRight' : ''}
-              animate__slow	3s`}>
-              <h3 className={` ${fontSizeBanner} font-bold bg-transparent uppercase`} >
-                Menos do mesmo
-              </h3>
-              <h4 className="font-bold bg-transparent mt-[5px]  xl:text-2xl">
-                Nos movemos diferentes para aqueles que querem diferença
-              </h4>
-              <h5 className="xl:text-2xl my-[20px]">
-                Sem conversinha, terceirizamos todo seu marketing através de estratégias de marketing que vão muito além de rede social. Criamos uma imersão em experiência e resultado, nascemos  grandes e somos o dream team com as melhores mentes do mercado, prontos pra fazer seu negócio evoluir todos os dias.
-              </h5>
-
-              <div className="xl:w-[80%] xs:w-[100%] grid justify-start mt-[2rem]">
-                <DefaultButtonColorWhite>
-                  Quero ter + resultados
-                </DefaultButtonColorWhite>
-              </div>
-            </span>
-          </div>
-        </section>
-        <section className="min-h-[100vh] xl:w-[70%] xs:w-full mx-[auto] max-w-7xl py-[6rem] xl:pl-0 xs:pl-[2rem]">
+        <section className="min-h-[100vh] xl:w-[70%] xs:w-full mx-[auto] max-w-7xl py-[6rem] xl:pl-0 xs:p-[2rem]">
           <div className={`
             flex
             items-start
@@ -223,7 +210,7 @@ export default function Home() {
                 </DefaultButtonColorWhite>
               </div>
             </div>
-            <ul className="w-full ">
+            <ul className="w-full">
               {['assessoria de marketing', 'branding visual', 'lançamentos 360º', 'produção web'].map((item, index) => (
                 <li key={`${item}-${index}`} className="cursor-[pointer]">
                   <div className="flex justify-between items-center" onClick={() => { onOpen(`${item}-${index}`) }}>
@@ -269,7 +256,7 @@ export default function Home() {
 
 
         </section>
-        <section className="w-full overflow-x-hidden py-[8rem] bg-white">
+        <section className="w-full overflow-x-hidden xl:py-[8rem] xs:py-[2rem] bg-white">
           <ul className="flex" style={{
             animation: 'slide 10s linear infinite',
 
@@ -312,11 +299,11 @@ export default function Home() {
                 negócio em</h3>
               <h3>
                 2º plano</h3>
-              <h4 className="text-xl mt-[2rem] ">
+              <h4 className="text-lg mt-[2rem] xl:max-w-[60%] xs:max-w-[100%]">
                 Preencha o formulário para receber uma proposta do nosso time comercial pelo WhatsApp.
               </h4>
             </div>
-            <div className="w-full grid place-items-center">
+            <div className="w-[50%]">
               <iframe
                 id="JotFormIFrame-240087678142662"
                 title="Fake form test"
