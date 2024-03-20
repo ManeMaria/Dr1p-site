@@ -16,12 +16,12 @@ const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
   ssr: false,
 });
 
-const fontSizeBanner = 'xs:text-[3rem] xl:text-[5rem]';
+const fontSizeBanner = 'xs:text-[3rem] xl:text-[5rem] 2xl:text-[10vh]';
+const normalFont = '';
 
 export default function Home() {
   const [openItem, setOpen] = useState('')
   const { visible, elementRef } = useOnScroll()
-  const { visible: visibleSection3Image, elementRef: refSection3Image } = useOnScroll()
   const { visible: visibleSection4Image, elementRef: refSection4Image } = useOnScroll()
   const { visible: visibleSection5Image, elementRef: refSection5Image } = useOnScroll()
   const onOpen = (item: string) => {
@@ -116,7 +116,7 @@ export default function Home() {
               <h2 className={`xl:text-[3.5rem] xs:text-[2rem] font-bold`}>
                 Réveillon Carneiros 2023
               </h2>
-              <h3 className={`txl:text-[2rem] xs:text-[1rem]`}>Visual Identity</h3>
+              <h3 className={`xl:text-[2rem] xs:text-[1rem] my-[2rem]`}>Visual Identity</h3>
               <h3 className={`xl:text-[2.5rem] xs:text-[1.5rem]`}>
                 O Réveillon Carneiros está indo para o seu quinto ano e se consolida como um dos maiores Réveillons do Brasil.
               </h3>
@@ -159,7 +159,7 @@ export default function Home() {
             <div>
               <NextImage alt="redbull-pitaya" src="/static/images/redbull-pitaya.avif" />
             </div>
-            <div>
+            <div >
               <img className="max-w-[none] w-[100%] h-[100%] max-h-[50rem] object-cover" src={`https://images.unsplash.com/photo-1493612276216-ee3925520721?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fHww`} alt="arrow-down" />
             </div>
             <div className={`bg-white text-black xl:p-[10rem] xs:p-[2rem]`}>
@@ -184,7 +184,7 @@ export default function Home() {
 
           </div>
         </section >
-        <section className="min-h-[100vh] xl:w-[70%] xs:w-full mx-[auto] max-w-7xl py-[6rem] xl:pl-0 xs:p-[2rem]">
+        <section className="min-h-[100vh] xl:w-[70%] xs:w-full mx-[auto] max-w-7xl xl:py-[6rem] xl:pl-0 xs:p-[2rem]">
           <div className={`
             flex
             items-start
@@ -243,6 +243,8 @@ export default function Home() {
                       overflow-y-hidden
                       transition-all
                       duration-700
+                      xl:text-[1.3rem]
+                      xs:text-[1rem]
                     `}>
                     <p>
                       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.

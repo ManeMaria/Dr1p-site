@@ -44,7 +44,7 @@ export function Carousel() {
                       xs:w-[100%]
                       xs:h-[100%]
                       max-w-[none]
-                      h-[30rem]
+                      xl:h-[30rem]
                       object-cover
                   `}
 
