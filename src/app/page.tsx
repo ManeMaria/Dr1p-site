@@ -16,8 +16,7 @@ const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
   ssr: false,
 });
 
-const fontSizeBanner = 'xs:text-[3rem] xl:text-[5rem] 2xl:text-[10vh]';
-const normalFont = '';
+const fontSizeBanner = 'xs:text-[3rem] xl:text-[5rem] 3xl:text-[5vh]';
 
 export default function Home() {
   const [openItem, setOpen] = useState('')
@@ -56,12 +55,12 @@ export default function Home() {
       <DynamicHeader />
 
       <main>
-        <section className="h-[90vh] xl:w-[70%] xs:w-full mx-[auto] max-w-7xl xl:pl-0 xs:pl-[2rem]">
+        <section className="xl:w-[70%] xs:w-full mx-[auto] max-w-7xl xl:pl-0 xs:pl-[2rem]">
           <span className="flex items-center w-full justify-between xl:flex-nowrap  xs:flex-wrap animate__animated animate__bounce animate__fadeInDown animate__slow	1s">
             <h3 className={`${fontSizeBanner} `}>
               Creative
             </h3>
-            <h3 className="xl:text-xl xs:text-xs">
+            <h3 className="xl:text-xl xs:text-xs 3xl:text-[1.5vh]">
               Somos uma agência de inteligência social,<br /><br />
               que conecta pessoas, marcas e histórias.
             </h3>
@@ -78,14 +77,14 @@ export default function Home() {
             <h3 className={`${fontSizeBanner}`}>
               We are
             </h3>
-            <h3 className="xl:text-xl">
+            <h3 className="xl:text-xl 3xl:text-[2vh]">
               <Link href="https://www.instagram.com/agenciadrip/" target="_blank" >
                 @agenciadrip
               </Link>
             </h3>
           </span>
           <span className="flex items-center  ml-[40px] gap-[30%] xl:flex-nowrap   xs:flex-wrap animate__animated animate__bounce animate__fadeInDown animate__slow	3s">
-            <h3 className="xl:text-xl">
+            <h3 className="xl:text-xl 3xl:text-[2vh]">
               www.agenciadrip.com.br
             </h3>
             <h3 className={`${fontSizeBanner} font-bold`}>
@@ -184,7 +183,7 @@ export default function Home() {
 
           </div>
         </section >
-        <section className="min-h-[100vh] xl:w-[70%] xs:w-full mx-[auto] max-w-7xl xl:py-[6rem] xl:pl-0 xs:p-[2rem]">
+        <section className="xl:w-[70%] xs:w-full mx-[auto] max-w-7xl xl:py-[6rem] xl:pl-0 xs:p-[2rem]">
           <div className={`
             flex
             items-start
@@ -245,6 +244,7 @@ export default function Home() {
                       duration-700
                       xl:text-[1.3rem]
                       xs:text-[1rem]
+                      3xl:text-[1.2vh]
                     `}>
                     <p>
                       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -277,7 +277,7 @@ export default function Home() {
 
           </ul>
         </section>
-        <section id='contato' className="min-h-[100vh] xl:w-[70%] xs:w-full mx-[auto] max-w-7xl py-[6rem] xl:pl-0 xs:pl-[2rem] gap-y-[2rem]">
+        <section id='contato' className="xl:w-[70%] xs:w-full mx-[auto] max-w-7xl py-[6rem] xl:pl-0 xs:pl-[2rem] gap-y-[2rem]">
           <div className={`
             flex
             items-start
@@ -301,7 +301,7 @@ export default function Home() {
                 negócio em</h3>
               <h3>
                 2º plano</h3>
-              <h4 className="text-lg mt-[2rem] xl:max-w-[60%] xs:max-w-[100%]">
+              <h4 className="text-lg mt-[2rem] xl:max-w-[60%] xs:max-w-[100%]  3xl:text-[1.2vh]">
                 Preencha o formulário para receber uma proposta do nosso time comercial pelo WhatsApp.
               </h4>
             </div>
@@ -325,7 +325,7 @@ export default function Home() {
           </div>
         </section>
       </main >
-      <footer className="xl:py-[5rem] xl:pl-[2rem] xs:p-[2rem] xl:max-w-7xl flex justify-center items-end mx-auto">
+      <footer className="xl:py-[5rem] xl:pl-[2rem] xs:p-[2rem] xl:max-w-7xl flex justify-center items-end mx-auto 3xl:text-[1.5vh]">
         <p className="w-full">
           Copyright © 2023 Agência Drip. Todos os direitos reservados.
         </p>

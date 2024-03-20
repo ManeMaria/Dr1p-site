@@ -3,7 +3,7 @@
 import NextImage from '@/components/NextImage'
 import { useMobileScreen, useToggleMenu } from '@/components/DynamicHeader/hooks'
 const Logo = () => (
-  <p className='text-2xl '>
+  <p className='text-2xl 3xl:text-[1.5vh]'>
     Agência Dr1p.
   </p>
 );
@@ -44,7 +44,7 @@ export function DynamicHeader() {
         </>
 
       ) : (
-        <nav className="flex justify-between w-[70%] mx-[auto]  max-w-7xl animate__animated animate__bounce animate__fadeIn animate__delay-2s text-2xl">
+        <nav className="flex justify-between w-[70%] mx-[auto]  max-w-7xl animate__animated animate__bounce animate__fadeIn animate__delay-2s text-2xl 3xl:text-[1.5vh]">
           <Logo />
           <NavMenu />
         </nav>

@@ -20,6 +20,7 @@ const config: Config = {
         'xl': '1280px',
         // => @media (min-width: 1280px) { ... }
         '2xl': '1536px',
+        '3xl': '3840px',
       },
       colors: {
         white: '#ffffff',
